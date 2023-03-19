@@ -20,7 +20,7 @@ const Calender = ({ res }) => {
         title: title,
         start: item.date,
         end: item.date,
-        color: item.day_note ? "info" : "orange",
+        color: item.day_note ? "DodgerBlue" : "Orange",
         // color: item.day_type_title === "Weekend" ? "orange" : "info",
       });
       return setCalenderSummary(arr);
@@ -62,6 +62,10 @@ const Calender = ({ res }) => {
         selectable={true}
         eventTextColor="white"
         handleWindowResize={true}
+        // height={650}
+        contentHeight={600}
+
+        
       />
     </>
   );

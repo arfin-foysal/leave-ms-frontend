@@ -1,9 +1,7 @@
 import React, { useState, useCallback } from "react";
 
-import {
-  BsFillPlusCircleFill,
-} from "react-icons/bs";
-import { Link } from "react-router-dom";
+import "./Company.css"
+
 
 
 import { IoSyncCircle } from "react-icons/io5";

@@ -70,6 +70,7 @@ const AdminPage = () => {
         />
       </div>
 
+
       <div className="row">
         <div className="col-lg-6 mb-4">
           <div className="card shadow mb-4 border-0">
@@ -125,10 +126,10 @@ const AdminPage = () => {
                       <tr key={i}>
                         <td>{item.leave_title}</td>
                         <td>
-                          <Moment format="YYYY/MM/DD">{item.startDate}</Moment>
+                          <Moment format="YYYY/MM/DD">{item.start_date}</Moment>
                         </td>
                         <td>
-                          <Moment format="YYYY/MM/DD">{item.endDate}</Moment>
+                          <Moment format="YYYY/MM/DD">{item.end_date}</Moment>
                         </td>
                         <td>{item.total_applied_days} Dayes</td>
                         {item.is_half_day ? (

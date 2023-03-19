@@ -69,7 +69,7 @@ const Layout = () => {
             className="sidebar-brand  d-flex align-items-center justify-content-center "
             to="#"
           >
-            <Link to="/" className="sidebar-brand-icon rotate-n-15">
+            <Link to="/" className="sidebar-brand-icon">
               <img src={sm_logo_white} width="30" alt="" />
             </Link>
             <div className="sidebar-brand-text mx-3">
@@ -100,7 +100,7 @@ const Layout = () => {
               </div>
 
               <div className="mt-1 ">
-                <span className=" name-font-size d-none d-lg-inline text-light-600 small ml-2 font-weight-bold ">
+                <span style={{fontSize: "0.60rem" }}  className=" name-font-size d-none d-lg-inline text-light-600 small ml-2 font-weight-bold ">
                   {authUser && authUser.name}
                 </span>
               </div>
