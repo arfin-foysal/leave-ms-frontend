@@ -21,10 +21,9 @@ const LeaveDetails = () => {
   const { id } = useParams();
   const res = useGetApplicationDetailsByIDQuery(id);
   const [approveLeave] = useApproveLeaveMutation();
-
   const { data } = res;
 
-
+  console.log(res);
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -77,12 +76,19 @@ const LeaveDetails = () => {
         clickValue="Do you want to reject?"
         paramId={id}
       />
+
       <PageTopHeader title="Leave Information" />
       <div className="card shadow mb-4">
         <div className="card-header py-3 n">
+          {data?.data?.leave_count_on_this_day === 2 && (
+            <div class="alert alert-danger" role="alert">
+              Already{data?.data?.leave_count_on_this_day} leave(s) has been approved on this date!
+            </div>
+          )}
+
           <div>
             <h6 className="m-0 font-weight-bold text-primary">
-            Leave Information
+              Leave Information
             </h6>
           </div>
         </div>

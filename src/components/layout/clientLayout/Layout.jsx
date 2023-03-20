@@ -12,6 +12,7 @@ function Layout() {
     <div >
       <div className="text-center text-primary p-5">
         <div className="py-4">
+          <h4 className="py-2">Welcome to 😊</h4>
           <img src={logo} alt="Leave Managemant System" />
         </div>
 

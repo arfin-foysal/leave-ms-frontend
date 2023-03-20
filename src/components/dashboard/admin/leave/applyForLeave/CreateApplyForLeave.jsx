@@ -107,9 +107,9 @@ const CreateApplyForLeave = ({ handleClose }) => {
         <form className="form-sample" onSubmit={formik.handleSubmit}>
           <div className="row">
             <div className="col-md-6">
-              <div className="form-group row">
+              <div className="form-group">
                 <label className=" col-form-label">Leave Date</label>
-                <div className="col-sm-6">
+                <div >
                   <DateRange
                     onChange={(item) => {
                       setRenge([item.selection]);
@@ -131,11 +131,11 @@ const CreateApplyForLeave = ({ handleClose }) => {
                 </div>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6 col-12">
               <div className="col-md-12">
                 <div className="form-group row">
-                  <label className="col-sm-6 col-form-label">Is half day</label>
-                  <div className="col-sm-6">
+                  <label className="col-md-6 col-6 col-form-label">Is half day</label>
+                  <div className="col-md-6 col-6">
                     <div class="form-check form-switch mt-2">
                       <Form.Check
                         type="switch"
@@ -161,7 +161,7 @@ const CreateApplyForLeave = ({ handleClose }) => {
               >
                 <div className="form-group row">
                   <label className=" col-form-label">Select Day Part</label>
-                  <div className="col-sm-12">
+                  <div className="col-md-12 col-12">
                     <select
                       className="form-control form-select"
                       name="half_day"
@@ -183,7 +183,7 @@ const CreateApplyForLeave = ({ handleClose }) => {
               <div className="col-md-12">
                 <div className="form-group row">
                   <label className=" col-form-label">Leave Type</label>
-                  <div className="col-sm-12">
+                  <div className="col-md-12">
                     <select
                       className="form-control form-select"
                       name="leave_policy_id"
@@ -208,7 +208,7 @@ const CreateApplyForLeave = ({ handleClose }) => {
               <div className="col-md-12">
                 <div className="form-group row">
                   <label className="col-form-label">Reason</label>
-                  <div className="col-sm-12">
+                  <div className="col-md-12">
                     <textarea
                       placeholder="Please write your reason for leave application."
                       required
@@ -225,7 +225,7 @@ const CreateApplyForLeave = ({ handleClose }) => {
                   <label className=" col-form-label">
                     Responsibility Carried By
                   </label>
-                  <div className="col-sm-12">
+                  <div className="col-md-12">
                     <input
                       type="text"
                       className="form-control"
