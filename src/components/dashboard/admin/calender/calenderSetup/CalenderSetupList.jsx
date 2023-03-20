@@ -1,7 +1,6 @@
-import React, { useState, useCallback } from "react";
+import React, { useState} from "react";
 import CalenderSetupModal from "./CalenderSetupModal";
 import CalenderSetupTable from "./CalenderSetupTable";
-import { useGetdepartmentListQuery } from "../../../../../services/departmentApi";
 import PageTopHeader from './../../../../common/PageTopHeader';
 
 const CalenderSetupList = () => {

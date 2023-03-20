@@ -18,7 +18,6 @@ import CompanyList from "./../components/dashboard/admin/company/CompanyList";
 import BranchList from "../components/dashboard/admin/branch/BranchList";
 import DesignationList from "../components/dashboard/admin/designation/DesignationList";
 import DepartmentList from "../components/dashboard/admin/department/DepartmentList";
-
 import Employee from "./../components/dashboard/views/Employee";
 import FiscalYearList from "../components/dashboard/admin/fiscalYear/FiscalYearList";
 import EmploymentList from "../components/dashboard/admin/employment/EmploymentList";
@@ -35,7 +34,6 @@ import PendingLeaveList from "../components/dashboard/admin/leave/pendingForLeav
 import ApproveLeaveList from "../components/dashboard/admin/leave/approveLeaveList/ApproveLeaveList";
 import MyCalender from "../components/dashboard/admin/calender/academicCalendar/MyCalender";
 import ChangePassword from './../components/pages/changePassword/ChangePassword';
-
 import LeaveTypeList from "../components/dashboard/admin/leavePolicy/LeaveTypeList";
 import LeaveBalance from '../components/dashboard/admin/leave/myLeaveBalance/LeaveBalance';
 

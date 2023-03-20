@@ -7,6 +7,7 @@ import { changePasswordSchema } from "../../../Validation/changePassword";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logout } from "../../../features/authSlice";
+import forgotPassword from "../../../assets/images/forgot password.png";
 const ChangePassword = () => {
   const [changePassword, res] = useChangePasswordMutation();
   const dispatch = useDispatch();
@@ -56,9 +57,11 @@ const ChangePassword = () => {
           <div className="card-body">
             <div className="container">
               <div className="row">
-                <div className="col-md-3"></div>
+                <div className="col-md-4 col-12 text-center">
+                  <img src={forgotPassword} width={350} alt="" />
+                </div>
 
-                <div className="col-md-6">
+                <div className="col-md-6 card py-4 shadow-lg  border-0">
                   <form onSubmit={formik.handleSubmit}>
                     <div className="form-group">
                       <label htmlFor="currentPassword">Current Password</label>
@@ -136,6 +139,8 @@ const ChangePassword = () => {
                     </div>
                   </form>
                 </div>
+                <div className="col-md-2"></div>
+                
               </div>
             </div>
           </div>

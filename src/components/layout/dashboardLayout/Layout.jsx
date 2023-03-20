@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { Outlet, NavLink, Link, useNavigate } from "react-router-dom";
 import { navItem } from "./../../../Nav/NavItem";
 import { user } from "../../../Route/utils";
@@ -15,12 +15,8 @@ import profilePicture from "../../../assets/images/profile-picture.png";
 import reset from "../../../assets/images/reset.png";
 import { FaBars } from "react-icons/fa";
 import sm_logo from "../../../assets/logo/sm_logo.png";
-
-
 import { BsFillPersonFill } from "react-icons/bs";
-
 import { RiLockPasswordFill, RiLogoutCircleRFill } from "react-icons/ri";
-
 const Layout = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -33,10 +29,30 @@ const Layout = () => {
     window.location.reload(false);
   };
 
+  // <-------------context menu disable----------->
+  // useEffect(() => {
+  //   const handleContextMenu = (e) => {
+  //     e.preventDefault();
+  //   };
+  //   document.addEventListener("contextmenu", handleContextMenu);
+  //   return () => {
+  //     document.removeEventListener("contextmenu", handleContextMenu);
+  //   };
+  // }, [])
+// <-------------context menu disable----------->
+  
+    
+  
+  
+  // <-------------refresh page----------->
   const refresh = () => {
     window.location.reload(false);
   };
 
+  // <-------------refresh page----------->
+
+//  <-------------SideBar Style----------->
+  
   const [style, setStyle] = useState(
     "navbar-nav bg-primary sidebar sidebar-dark accordion"
   );
@@ -55,6 +71,9 @@ const Layout = () => {
       setStyle("navbar-nav bg-primary sidebar sidebar-dark accordion");
     }
   };
+
+  
+//  <-------------SideBar Style----------->
 
   return (
     <div>
@@ -119,10 +138,11 @@ const Layout = () => {
           {navItem.map(
             (n, i) => n.role === user.role && <Sidebar item={n} key={i} />
           )}
+          
         </ul>
         {/*  <!-- End of Sidebar --> */}
 
-        {/*  <!-- Content Wrapper --> */}
+
         <div id="content-wrapper" className="d-flex flex-column">
           {/*  <!-- Main Content --> */}
           <div id="content">

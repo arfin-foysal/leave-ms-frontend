@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState } from "react";
 
 import "./Company.css"
 
@@ -17,11 +17,9 @@ const CompanyList = () => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
-  const handelClickValue = useCallback((value) => {
-    setClickValue(value);
-  }, []);
+
+
 
   const refatchClick = () => {
     get.refetch();
@@ -43,18 +41,7 @@ const CompanyList = () => {
                   onClick={() => refatchClick()}
                 />
               </div>
-              {/* <div>
-                <Link
-                  to="#"
-                  className="btn btn-primary "
-                  onClick={() => {
-                    handleShow();
-                    handelClickValue("Add Company Information");
-                  }}
-                >
-                  <BsFillPlusCircleFill className="mb-1 mr-1" /> New
-                </Link>
-              </div> */}
+
             </div>
 
         </div>

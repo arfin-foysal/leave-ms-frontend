@@ -147,7 +147,7 @@ const CalenderSetupTable = () => {
             backgroundColor: "#0D6EFD",
           },
         }}
-        initialState={{ pagination: { pageSize: 30} }}
+        initialState={{ pagination: { pageSize: 31} }}
         // enablePagination="true"
         renderRowActions={(row, index) => (
           <>

@@ -47,7 +47,7 @@ const Login = () => {
       <ToastContainer />
       <div className="container">
         {/* <!-- Outer Row --> */}
-        <div className="row justify-content-center">
+        <div className="row justify-content-center mt-5">
           <div className="col-12 col-md-6">
             <div className="card o-hidden border-0 shadow-lg my-5">
               <div className="card-body p-0">

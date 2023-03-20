@@ -5,7 +5,9 @@ import { useSelector } from "./../../../store/index";
 import logo from "./../../../assets/logo/logo.png";
 
 function Layout() {
-  const authUser = useSelector((state) => state.auth.user);
+  const authUser = useSelector((state) => state.auth.token);
+
+
   return (
     <div >
       <div className="text-center text-primary p-5">
