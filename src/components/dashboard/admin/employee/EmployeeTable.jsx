@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import { BsFillEyeFill } from "react-icons/bs";
 
-import { FaEdit } from "react-icons/fa";
+import { FaEdit, FaPowerOff } from "react-icons/fa";
 
 import { AiFillUnlock } from "react-icons/ai";
 import Loader from "../../../common/Loader";
@@ -12,17 +12,29 @@ import avatar from "../../../../assets/images/profile-picture.png";
 
 import { useGetEmployeeListQuery } from "../../../../services/employeeApi";
 import PasswordUpdateModal from "./PasswordUpdateModal";
+import OffboardModal from "./OffboardModal";
 
 const EmployeeTable = () => {
   const { data, isSuccess, isFetching } = useGetEmployeeListQuery();
-
+  const [showOffboard, setShowOffboard] = useState(false);
   const [show, setShow] = useState(false);
+
+
   const [paramId, setParamId] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const handleCloseOffboard = () => setShowOffboard(false);
+  const handleShowOffboard = () => setShowOffboard(true);
+
+
+
+
+
+
 
   const columns = useMemo(
     () => [
+    
       {
         accessorFn: (row) =>
           row.image ? (
@@ -50,14 +62,32 @@ const EmployeeTable = () => {
 
         Header: <span className="table-header">Image</span>, //optional custom markup
       },
-      {
-        accessorKey: "name", //access nested data with dot notation
-        header: "Name",
-        size: "small",
-      },
+
       {
         accessorKey: "employee_code", //access nested data with dot notation
         header: "Code",
+        size: "small",
+      },
+
+      {
+        accessorFn: (row) =>
+          row.name && (
+            <>
+              <span>
+                {row.name}
+  
+              </span>
+            </>
+          ), //alternate way
+        id: "name", //id required if you use accessorFn instead of accessorKey
+        header: "Name",
+        size: "small",
+        Header: <span className="table-header">Name</span>, //optional custom markup
+      },
+
+      {
+        accessorKey: "mobile", //access nested data with dot notation
+        header: "monile",
         size: "small",
       },
       {
@@ -65,27 +95,31 @@ const EmployeeTable = () => {
         header: "Email",
         size: "small",
       },
-      {
-        accessorKey: "designation", //access nested data with dot notation
-        header: "Designation",
-        size: "small",
-      },
+
       {
         accessorFn: (row) =>
-          row.is_active === true ? (
+          row.name && (
             <>
-              <span className="badge badge-success">Active</span>
-            </>
-          ) : (
-            <>
-              <span className="badge badge-danger">Inactive</span>
+              <span>
+                {row.designation}
+                <br />
+                <b>DPT : </b>
+                {row.department}
+              </span>
             </>
           ), //alternate way
-        id: "is_active", //id required if you use accessorFn instead of accessorKey
-        header: "Status",
+        id: "designation", //id required if you use accessorFn instead of accessorKey
+        header: "Designation",
         size: "small",
-        Header: <span className="table-header">Status</span>, //optional custom markup
+        Header: <span className="table-header">Designation</span>, //optional custom markup
       },
+
+
+      // {
+      //   accessorKey: "designation", //access nested data with dot notation
+      //   header: "Designation",
+      //   size: "small",
+      // },
     ],
     []
   );
@@ -97,8 +131,15 @@ const EmployeeTable = () => {
       <PasswordUpdateModal
         handleClose={handleClose}
         show={show}
-        clickValue="Password Reset"
+        clickValue="Do you want to offboard this employee?"
         paramId={paramId}
+      />
+
+      <OffboardModal
+         handleClose={handleCloseOffboard}
+         show={showOffboard}
+         clickValue="Do you want to offboard this employee?"
+         paramId={paramId}
       />
 
       {/* <MaterialReactTable columns={columns} data={data} /> */}
@@ -149,7 +190,7 @@ const EmployeeTable = () => {
                 </Link>
               </div>
 
-              <div>
+              <div className="me-1">
                 <Link
                   to={`/dashboard/approval-authority/edit-employee/${row?.row?.original?.id}`}
                   title=""
@@ -161,6 +202,24 @@ const EmployeeTable = () => {
                   <div>Edit</div>
                 </Link>
               </div>
+
+              <div className="ms-1">
+                <Link
+                  onClick={() => {
+                    
+                  handleShowOffboard();
+                  setParamId(row?.row?.original?.user_id);
+                }}
+                  className="px-2 btn btn-danger btn-sm d-flex align-items-center"
+                >
+                  <div>
+                    <FaPowerOff className="mb-1 mr-1" size={16} />
+                  </div>
+                  <div>OffBoarding</div>
+                </Link>
+              </div>
+
+
             </div>
           </>
         )}

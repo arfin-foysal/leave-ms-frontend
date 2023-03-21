@@ -21,6 +21,8 @@ import { calenderApi } from "../services/calenderApi";
 import { leaveBalanceSettingsApi } from "../services/leaveBalanceSettingsApi";
 import { balanceSetupApi } from "../services/balanceSetupApi";
 import { leaveApplicationApi } from './../services/leaveApplication';
+import { wingApi } from "../services/wingApi";
+
 
 const store = configureStore({
   reducer: {
@@ -40,6 +42,7 @@ const store = configureStore({
     [calenderApi.reducerPath]: calenderApi.reducer,
     [balanceSetupApi.reducerPath]: balanceSetupApi.reducer,
     [leaveApplicationApi.reducerPath]: leaveApplicationApi.reducer,
+    [wingApi.reducerPath]: wingApi.reducer,
     
 
 
@@ -61,7 +64,8 @@ const store = configureStore({
       leaveApprovalFlowApi.middleware,
       calenderApi.middleware,
       balanceSetupApi.middleware,
-      leaveApplicationApi.middleware
+      leaveApplicationApi.middleware,
+      wingApi.middleware
    
     ]),
 });

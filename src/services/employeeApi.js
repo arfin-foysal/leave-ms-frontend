@@ -17,6 +17,14 @@ export const employeeApi = createApi({
       }),
       providesTags: ["Employee"],
     }),
+    getOffboardedEmployeeList: builder.query({
+      query: () => ({
+        url: "admin/offboarded-employee-list",
+        method: "GET",
+        headers,
+      }),
+      providesTags: ["Employee"],
+    }),
     addEmployee: builder.mutation({
       query: (employee) => {
         return {
@@ -99,6 +107,20 @@ export const employeeApi = createApi({
       }),
       providesTags: ["Employee"],
     }),
+
+    addOffboarding: builder.mutation({
+      query: (employee) => {
+        return {
+          url: `admin/add-approval-flow`,
+          method: "POST",
+          body: employee,
+          headers,
+        };
+      },
+      invalidatesTags: ["Employee"],
+    }),
+    // /
+
   }),
 });
 
@@ -113,4 +135,6 @@ export const {
   useEmployeeDetailsByIdQuery,
   useLeaveBalanceListByEmpIdQuery,
   useGetApprovalAuthorityListQuery,
+  useGetOffboardedEmployeeListQuery,
+  useAddOffboardingMutation,
 } = employeeApi;

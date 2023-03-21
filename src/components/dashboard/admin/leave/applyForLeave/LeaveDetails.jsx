@@ -80,11 +80,7 @@ const LeaveDetails = () => {
       <PageTopHeader title="Leave Information" />
       <div className="card shadow mb-4">
         <div className="card-header py-3 n">
-          {data?.data?.leave_count_on_this_day === 2 && (
-            <div class="alert alert-danger" role="alert">
-              Already{data?.data?.leave_count_on_this_day} leave(s) has been approved on this date!
-            </div>
-          )}
+  
 
           <div>
             <h6 className="m-0 font-weight-bold text-primary">
@@ -96,6 +92,11 @@ const LeaveDetails = () => {
         {res.isFetching && <Loader />}
 
         <div className="card-body">
+        {data?.data?.leave_count_on_this_day === 0 && (
+            <div class="alert alert-danger" role="alert">
+              Already {data?.data?.leave_count_on_this_day} leave(s) has been approved on this date!
+            </div>
+          )}
           <div className="py-2 text-right mr-1">
             <div className="d-flex justify-content-end">
               <div className="mt-1"></div>
@@ -104,6 +105,7 @@ const LeaveDetails = () => {
           <div className=" row d-flex">
             <div className="col-md-6 ">
               <div className=" card card shadow mb-4">
+                
                 <div className="card-header py-3 ">
                   <div>
                     <h6 className="m-0 p-1 font-weight-bold text-primary">

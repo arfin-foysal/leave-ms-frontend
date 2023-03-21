@@ -21,6 +21,7 @@ import {
 import { toast } from "react-toastify";
 import { editEmployeeSchema } from "./../../../../Validation/editEmployeeSchema";
 import avater from "../../../../assets/images/profile-picture.png";
+import { useGetWingListQuery } from "../../../../services/wingApi";
 
 const EditEmployee = () => {
   const navigate = useNavigate();
@@ -84,7 +85,7 @@ const EditEmployee = () => {
     department_id:
       empDetailsRes.isSuccess && empDetailsRes?.data?.data?.department_id,
     
-    wing: empDetailsRes.isSuccess && empDetailsRes?.data?.data?.wing,
+    wing_id: empDetailsRes.isSuccess && empDetailsRes?.data?.data?.wing_id,
 
     designation_id:
       empDetailsRes.isSuccess && empDetailsRes?.data?.data?.designation_id,
@@ -168,7 +169,7 @@ const EditEmployee = () => {
       formData.append("branch_id", branch_id);
       formData.append("department_id", department_id);
       
-      formData.append("wing", values.wing);
+      formData.append("wing_id", values.wing_id);
       formData.append("designation_id", designation_id);
       formData.append("division_id", divisions_id);
       formData.append("district_id", districts_id);
@@ -274,6 +275,8 @@ const EditEmployee = () => {
     comId: company_id,
     braId: branch_id,
   });
+
+  const wingRes= useGetWingListQuery();
 
   // <==============singal request end===================>
 
@@ -1051,25 +1054,22 @@ const EditEmployee = () => {
                     Wing
                   </label>
                   <div className="col-sm-9">
-                    <input
-                      type="text"
-                      name="wing"
+                  <select
+                      name="wing_id"
                       onChange={formik.handleChange}
-                      value={formik.values.wing}
-                      // onBlur={formik.handleBlur}
-                      placeholder="Enter Wing"
-                      className="form-control"
-                      // className={
-                      //   formik.errors.name && formik.touched.wing
-                      //     ? "form-control is-invalid"
-                      //     : "form-control"
-                      // }
-                    />
-                    {/* {formik.errors.name && formik.touched.name ? (
-                      <div className="invalid-feedback">
-                        {formik.errors.name}
-                      </div>
-                    ) : null} */}
+                      value={formik.values.wing_id}
+                      onBlur={formik.handleBlur}
+                      className="form-control "
+                      
+                    >
+                      <option>Selact wing</option>
+                      {wingRes?.data?.data?.map((wing, i) => (
+                        <option key={i} value={wing.id}>
+                          {wing.name}
+                        </option>
+                      ))}
+                    </select>
+     
                   </div>
                 </div>
               </div>

@@ -36,6 +36,8 @@ import MyCalender from "../components/dashboard/admin/calender/academicCalendar/
 import ChangePassword from './../components/pages/changePassword/ChangePassword';
 import LeaveTypeList from "../components/dashboard/admin/leavePolicy/LeaveTypeList";
 import LeaveBalance from '../components/dashboard/admin/leave/myLeaveBalance/LeaveBalance';
+import WingList from "../components/dashboard/admin/wing/WingList";
+import { OffboardedEmployee } from './../components/dashboard/admin/offboardedEmployee/OffboardedEmployee';
 
 
 
@@ -67,6 +69,11 @@ export const privateRoute = [
   {
     path: "approval-authority/employee-list",
     element: <EmployeeList />,
+    role: "approvalauthority",
+  },
+  {
+    path: "approval-authority/offboarded-employee-list",
+    element: <OffboardedEmployee />,
     role: "approvalauthority",
   },
   {
@@ -117,6 +124,11 @@ export const privateRoute = [
   {
     path: "approval-authority/employment-list",
     element: <EmploymentList />,
+    role: "approvalauthority",
+  },
+  {
+    path: "approval-authority/wing-list",
+    element: <WingList />,
     role: "approvalauthority",
   },
   {

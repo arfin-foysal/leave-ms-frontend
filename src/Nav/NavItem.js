@@ -12,6 +12,7 @@ import {
   BsCalendarDay,
   BsHourglassSplit,
 } from "react-icons/bs";
+import { ImUserMinus } from "react-icons/im";
 
 import { MdAppRegistration, MdOutlinePolicy } from "react-icons/md";
 
@@ -24,6 +25,7 @@ import { FcLeave } from "react-icons/fc";
 import { RiFileList3Line } from "react-icons/ri";
 import { SlWallet } from "react-icons/sl";
 import { TfiWrite } from "react-icons/tfi";
+import { GiAngelWings } from "react-icons/gi";
 
 // <----------------- Navbar icon end ------------------>
 
@@ -88,10 +90,22 @@ export const navItem = [
         icon: <BsBox size={16} />,
       },
       {
+        title: "Wing",
+        link: "approval-authority/wing-list",
+        role: "approvalauthority",
+        icon: <GiAngelWings size={16} />,
+      },
+      {
         title: "Employee",
         link: "approval-authority/employee-list",
         role: "approvalauthority",
         icon: <FaUserInjured size={17} />,
+      },
+      {
+        title: "Offboarded",
+        link: "approval-authority/offboarded-employee-list",
+        role: "approvalauthority",
+        icon: <ImUserMinus size={18} />,
       },
       {
         title: "Leave Policy",

@@ -21,6 +21,7 @@ import {
 import { toast } from "react-toastify";
 import { employeeSchema } from "./../../../../Validation/employeeSchema";
 import avater from "../../../../assets/images/profile-picture.png";
+import { useGetWingListQuery } from "../../../../services/wingApi";
 const CreateEmployee = () => {
   const navigate = useNavigate();
   const companyRes = useGetCompanyListQuery();
@@ -58,7 +59,7 @@ const CreateEmployee = () => {
     company_id: "",
     branch_id: "",
     department_id: "",
-    wing:"",
+    wing_id:"",
     designation_id: "",
     division_id: "",
     gender: "",
@@ -112,7 +113,7 @@ const CreateEmployee = () => {
       formData.append("company_id", values.company_id);
       formData.append("branch_id", values.branch_id);
       formData.append("department_id", values.department_id);
-      formData.append("wing", values.wing);
+      formData.append("wing_id", values.wing_id);
       formData.append("designation_id", values.designation_id);
       formData.append("division_id", values.division_id);
       formData.append("gender", values.gender);
@@ -178,6 +179,7 @@ const CreateEmployee = () => {
   const upazilaRes = useGetUpazilaListByIdQuery(districts_id);
   const areaRes = useGetAreaListByIdQuery(city_id);
   const branchRes = useGetBranchListByCompanyIdQuery(company_id);
+ const wingRes= useGetWingListQuery();
 
   const departmentRes = useGetDepartmentListByCompanyAndBranchIdQuery({
     comId: company_id,
@@ -1005,25 +1007,22 @@ const CreateEmployee = () => {
                     Wing
                   </label>
                   <div className="col-sm-9">
-                    <input
-                      type="text"
-                      name="wing"
+                  <select
+                      name="wing_id"
                       onChange={formik.handleChange}
-                      value={formik.values.wing}
-                      // onBlur={formik.handleBlur}
-                      placeholder="Enter Wing"
-                      className="form-control"
-                      // className={
-                      //   formik.errors.name && formik.touched.wing
-                      //     ? "form-control is-invalid"
-                      //     : "form-control"
-                      // }
-                    />
-                    {/* {formik.errors.name && formik.touched.name ? (
-                      <div className="invalid-feedback">
-                        {formik.errors.name}
-                      </div>
-                    ) : null} */}
+                      value={formik.values.wing_id}
+                      onBlur={formik.handleBlur}
+                      className="form-control "
+                      
+                    >
+                      <option>Selact wing</option>
+                      {wingRes?.data?.data?.map((wing, i) => (
+                        <option key={i} value={wing.id}>
+                          {wing.name}
+                        </option>
+                      ))}
+                    </select>
+     
                   </div>
                 </div>
               </div>
