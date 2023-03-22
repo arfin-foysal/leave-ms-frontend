@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { IoSyncCircle } from "react-icons/io5";
 import PageTopHeader from "../../../common/PageTopHeader";
 import { useGetEmployeeListQuery } from "../../../../services/employeeApi";
+import { FaUserInjured } from "react-icons/fa";
 
 const EmployeeList = () => {
   const get = useGetEmployeeListQuery();
@@ -21,7 +22,7 @@ const EmployeeList = () => {
         <div className="card-header d-flex justify-content-between">
           <div className="mt-1">
             <h6 className="m-0 font-weight-bold text-primary">
-              All Employee List{" "}
+            <FaUserInjured/>  All Employee List{" "}
             </h6>
           </div>
           <div className="d-flex justify-content-end">

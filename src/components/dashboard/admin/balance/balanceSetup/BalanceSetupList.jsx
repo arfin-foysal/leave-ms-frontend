@@ -2,8 +2,7 @@ import React, { useState, useCallback } from "react";
 import PageTopHeader from "../../../../common/PageTopHeader";
 import BalanceSetupTable from "./BalanceSetupTable";
 import BalanceSetupModal from "./BalanceSetupModal";
-import { Link } from 'react-router-dom';
-import { BsFillPlusCircleFill } from "react-icons/bs";
+import { BiWallet } from "react-icons/bi";
 
 
 
@@ -13,7 +12,7 @@ const BalanceSetupList = () => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+
 
   const handelClickValue = useCallback((value) => {
     setClickValue(value);
@@ -27,7 +26,7 @@ const BalanceSetupList = () => {
         <div className="card-header ">
           <div className="">
             <h6 className="m-0 font-weight-bold text-primary">
-            Leave Balance List
+          <BiWallet/>  Leave Balance List
             </h6>
           </div>
 

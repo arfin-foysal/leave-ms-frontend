@@ -9,6 +9,7 @@ import CompanyTable from "./CompanyTable";
 import CompanyModal from "./CompanyModal";
 import { useGetCompanyListQuery } from "../../../../services/companyApi";
 import PageTopHeader from "../../../common/PageTopHeader";
+import { HiOutlineOfficeBuilding } from "react-icons/hi";
 
 const CompanyList = () => {
 
@@ -30,7 +31,7 @@ const CompanyList = () => {
       <div className="card shadow mb-4">
         <div className="card-header d-flex justify-content-between">
           <div className="mt-1">
-            <h6 className="m-0 font-weight-bold text-primary">Company Information</h6>
+            <h6 className="m-0 font-weight-bold text-primary"><HiOutlineOfficeBuilding/> Company Information</h6>
           </div>
           <div className="d-flex justify-content-end">
               <div className="mt-1">

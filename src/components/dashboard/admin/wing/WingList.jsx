@@ -8,6 +8,7 @@ import { useGetDesignationListQuery } from "../../../../services/designationApi"
 import PageTopHeader from "../../../common/PageTopHeader";
 import WingTable from "./WingTable";
 import WingModal from "./WingModal";
+import { GiAngelWings } from 'react-icons/gi';
 
 const WingList = () => {
   const get = useGetDesignationListQuery();
@@ -27,11 +28,11 @@ const WingList = () => {
   
   return (
     <>
-      <PageTopHeader title="Designation" />
+      <PageTopHeader title="Wing List" />
       <div className="card shadow mb-4">
         <div className="card-header  d-flex justify-content-between">
           <div className="mt-1">
-            <h6 className="m-0 font-weight-bold text-primary">Wing List</h6>
+            <h6 className="m-0 font-weight-bold text-primary"> <GiAngelWings/> Wing List</h6>
           </div>
           <div className="d-flex justify-content-end">
             <div className="mt-1">

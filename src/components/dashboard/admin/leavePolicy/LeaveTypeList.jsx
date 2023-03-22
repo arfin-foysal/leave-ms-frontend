@@ -10,6 +10,7 @@ import LeaveTypeModal from "./LeaveTypeModal";
 import LeaveTypeTable from "./LeaveTypeTable";
 import { useGetLeavePolicyListQuery } from "../../../../services/leavepolicyApi";
 import PageTopHeader from "../../../common/PageTopHeader";
+import { MdOutlinePolicy } from "react-icons/md";
 
 const LeaveTypeList = () => {
   const get = useGetLeavePolicyListQuery();
@@ -33,8 +34,7 @@ const LeaveTypeList = () => {
       <div className="card shadow mb-4">
         <div className="card-header  d-flex justify-content-between">
           <div className="mt-1">
-            <h6 className="m-0 font-weight-bold text-primary">
-            Leave Policy Setup
+            <h6 className="m-0 font-weight-bold text-primary"><MdOutlinePolicy/> Leave Policy Setup
             </h6>
           </div>
           <div className="d-flex justify-content-end">

@@ -6,7 +6,7 @@ import Moment from "react-moment";
 import Loader from "../../../../common/Loader";
 import { useGetApprovalPendingApplicationListQuery } from "../../../../../services/leaveApplication";
 import PageTopHeader from "../../../../common/PageTopHeader";
-import { BsFillEyeFill } from "react-icons/bs";
+import { BsFillEyeFill, BsHourglassSplit } from "react-icons/bs";
 import { IoSyncCircle } from "react-icons/io5";
 
 const PendingLeaveList = () => {
@@ -24,7 +24,7 @@ const PendingLeaveList = () => {
         <div className="card-header d-flex justify-content-between">
           <div>
             <h6 className="m-0 font-weight-bold text-primary">
-              Pending Leave List
+            <BsHourglassSplit/>  Pending Leave List
             </h6>
           </div>
           <div>

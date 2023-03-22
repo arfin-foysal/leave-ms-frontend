@@ -8,6 +8,7 @@ import WorkingDayTable from "./WorkingDayTable";
 import WorkingDayModal from "./WorkingDayModal";
 import { useGetBranchListQuery } from "../../../../../services/branchApi";
 import PageTopHeader from "../../../../common/PageTopHeader";
+import { MdWorkOutline } from "react-icons/md";
 // import { useSelector } from "react-redux";
 
 const WorkingDayList = () => {
@@ -36,7 +37,7 @@ const WorkingDayList = () => {
       <div className="card shadow mb-4">
         <div className="card-header py-3 n">
           <div>
-            <h6 className="m-0 font-weight-bold text-primary">Working Day</h6>
+            <h6 className="m-0 font-weight-bold text-primary"> <MdWorkOutline/> Working Day</h6>
           </div>
         </div>
 

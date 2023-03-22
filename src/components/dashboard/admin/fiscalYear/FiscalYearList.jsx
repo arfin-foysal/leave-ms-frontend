@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from "react";
 
-import { BsFillPlusCircleFill } from "react-icons/bs";
+import { BsCalendar2Check, BsFillPlusCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 import { IoSyncCircle } from "react-icons/io5";
@@ -32,7 +32,7 @@ const FiscalYearList = () => {
 
         <div className="card-header d-flex justify-content-between">
           <div className="mt-1">
-            <h6 className="m-0 font-weight-bold text-primary">
+            <h6 className="m-0 font-weight-bold text-primary"><BsCalendar2Check className="me-1 mb-1"/>
               Fiscal Year Information
             </h6>
           </div>

@@ -9,6 +9,7 @@ import BranchModal from "./BranchModal";
 import BranchTable from "./BranchTable";
 import { useGetBranchListQuery } from "../../../../services/branchApi";
 import PageTopHeader from "../../../common/PageTopHeader";
+import { TbGitBranch } from "react-icons/tb";
 // import { useSelector } from "react-redux";
 
 
@@ -36,7 +37,7 @@ const BranchList = () => {
       <div className="card shadow mb-4">
         <div className="card-header  d-flex justify-content-between">
           <div className="mt-1">
-            <h6 className="m-0 font-weight-bold text-primary">Branch Information</h6>
+            <h6 className="m-0 font-weight-bold text-primary"> <TbGitBranch size={19} /> Branch Information</h6>
 
 
           </div>
@@ -59,7 +60,7 @@ const BranchList = () => {
                     handelClickValue("Add New Branch");
                   }}
                 >
-                  <BsFillPlusCircleFill className="mb-1 mr-1" /> Add New Branch
+                  <BsFillPlusCircleFill className="mb-1 mr-1" />  Add New Branch
                 </Link>
               </div>
             </div>

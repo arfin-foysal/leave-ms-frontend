@@ -65,7 +65,7 @@ const OffboardedEmployeeTable = () => {
               <span>
                 {row.designation}
                 <br />
-                <b>DPT : </b>
+                <b>Dpet. : </b>
                 {row.department}
               </span>
             </>

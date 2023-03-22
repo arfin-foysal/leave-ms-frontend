@@ -2,10 +2,12 @@ import React from "react";
 import Modal from "react-bootstrap/Modal";
 import { useFormik } from "formik";
 import { toast } from "react-toastify";
-import { useAddOffboardingMutation } from "../../../../services/employeeApi";
+import { useAddOffBoardingEmployeeMutation } from "../../../../services/employeeApi";
+
 
 const OffboardModal = ({ handleClose, show, clickValue, paramId }) => {
-    const [addOffboarding, res] = useAddOffboardingMutation();
+  const [addOffBoardingEmployee, res] = useAddOffBoardingEmployeeMutation()
+
 
   const formik = useFormik({
     initialValues: {
@@ -14,9 +16,9 @@ const OffboardModal = ({ handleClose, show, clickValue, paramId }) => {
     },
     onSubmit: async (values, { resetForm }) => {
         try {
-          const result = await addOffboarding({
-            employee_id: paramId,
-            offboarding_date: values.rejection_cause,
+          const result = await addOffBoardingEmployee({
+            employee_id: paramId.user_id,
+            offboarding_date: values.offboarding_date,
           }).unwrap();
           if (result.status) {
             resetForm();
@@ -43,8 +45,8 @@ const OffboardModal = ({ handleClose, show, clickValue, paramId }) => {
         </Modal.Header>
         <Modal.Body>
           <div>
-            <div>
-
+            <div className="text-center ">
+              <h6 className="badge rounded-pill bg-danger">{paramId?.name}</h6>
             </div>
             <form onSubmit={formik.handleSubmit}>
               <div className="form-group text-center">
@@ -58,6 +60,8 @@ const OffboardModal = ({ handleClose, show, clickValue, paramId }) => {
 
           
               </div>
+
+              
               <Modal.Footer>
                 <button
                   type="button"

@@ -71,7 +71,5 @@ const store = configureStore({
 });
 setupListeners(store.dispatch);
 export const useSelector = useReduxSelector;
-
 export const useDispatch = () => useReduxDispatch();
-
 export default store;

@@ -61,20 +61,20 @@ export const navItem = [
         title: "Fiscal Year",
         link: "approval-authority/fiscal-year-list",
         role: "approvalauthority",
-        icon: <BsCalendar2Check size={16} />,
+        icon: <BsCalendar2Check size={15} />,
       },
 
       {
         title: "Branch",
         link: "approval-authority/branch-list",
         role: "approvalauthority",
-        icon: <TbGitBranch size={19} />,
+        icon: <TbGitBranch size={20} />,
       },
       {
         title: "Department",
         link: "approval-authority/department-list",
         role: "approvalauthority",
-        icon: <FaCodepen size={18} />,
+        icon: <FaCodepen size={16} />,
       },
       {
         title: "Designation",
@@ -87,7 +87,7 @@ export const navItem = [
         title: "Employment Type",
         link: "approval-authority/employment-list",
         role: "approvalauthority",
-        icon: <BsBox size={16} />,
+        icon: <BsBox size={15} />,
       },
       {
         title: "Wing",

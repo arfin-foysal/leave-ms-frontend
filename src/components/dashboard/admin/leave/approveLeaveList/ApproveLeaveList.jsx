@@ -7,6 +7,7 @@ import Loader from "../../../../common/Loader";
 import { useGetApprovedApplicationListQuery } from "../../../../../services/leaveApplication";
 import PageTopHeader from "../../../../common/PageTopHeader";
 import { BsFillEyeFill } from "react-icons/bs";
+import { RiFileList3Line } from 'react-icons/ri';
 
 
 
@@ -23,7 +24,7 @@ const ApproveLeaveList = () => {
         <div className="card-header ">
           <div>
             <h6 className="m-0 font-weight-bold text-primary">
-              Approved Leave List
+            <RiFileList3Line/>  Approved Leave List
             </h6>
           </div>
         </div>

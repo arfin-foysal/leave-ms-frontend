@@ -19,22 +19,14 @@ const EmployeeTable = () => {
   const [showOffboard, setShowOffboard] = useState(false);
   const [show, setShow] = useState(false);
 
-
   const [paramId, setParamId] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleCloseOffboard = () => setShowOffboard(false);
   const handleShowOffboard = () => setShowOffboard(true);
 
-
-
-
-
-
-
   const columns = useMemo(
     () => [
-    
       {
         accessorFn: (row) =>
           row.image ? (
@@ -68,26 +60,16 @@ const EmployeeTable = () => {
         header: "Code",
         size: "small",
       },
-
-      {
-        accessorFn: (row) =>
-          row.name && (
-            <>
-              <span>
-                {row.name}
   
-              </span>
-            </>
-          ), //alternate way
-        id: "name", //id required if you use accessorFn instead of accessorKey
-        header: "Name",
+      {
+        accessorKey: "name", //access nested data with dot notation
+        header: "name",
         size: "small",
-        Header: <span className="table-header">Name</span>, //optional custom markup
       },
 
       {
         accessorKey: "mobile", //access nested data with dot notation
-        header: "monile",
+        header: "Phone",
         size: "small",
       },
       {
@@ -101,10 +83,10 @@ const EmployeeTable = () => {
           row.name && (
             <>
               <span>
-                {row.designation}
+                {row?.designation}
                 <br />
-                <b>DPT : </b>
-                {row.department}
+                <b>Dept. : </b>
+                {row?.department}
               </span>
             </>
           ), //alternate way
@@ -113,7 +95,6 @@ const EmployeeTable = () => {
         size: "small",
         Header: <span className="table-header">Designation</span>, //optional custom markup
       },
-
 
       // {
       //   accessorKey: "designation", //access nested data with dot notation
@@ -136,10 +117,10 @@ const EmployeeTable = () => {
       />
 
       <OffboardModal
-         handleClose={handleCloseOffboard}
-         show={showOffboard}
-         clickValue="Do you want to offboard this employee?"
-         paramId={paramId}
+        handleClose={handleCloseOffboard}
+        show={showOffboard}
+        clickValue="Do you want to offboard this employee?"
+        paramId={paramId}
       />
 
       {/* <MaterialReactTable columns={columns} data={data} /> */}
@@ -206,10 +187,9 @@ const EmployeeTable = () => {
               <div className="ms-1">
                 <Link
                   onClick={() => {
-                    
-                  handleShowOffboard();
-                  setParamId(row?.row?.original?.user_id);
-                }}
+                    handleShowOffboard();
+                    setParamId(row?.row?.original);
+                  }}
                   className="px-2 btn btn-danger btn-sm d-flex align-items-center"
                 >
                   <div>
@@ -218,8 +198,6 @@ const EmployeeTable = () => {
                   <div>OffBoarding</div>
                 </Link>
               </div>
-
-
             </div>
           </>
         )}

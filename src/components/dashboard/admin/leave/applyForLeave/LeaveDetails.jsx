@@ -18,12 +18,12 @@ import RejectionModal from "./RejectionModal";
 
 const LeaveDetails = () => {
   const authUser = useSelector((state) => state.auth.user);
+  const authUserRole = useSelector((state) => state.auth.role);
   const { id } = useParams();
   const res = useGetApplicationDetailsByIDQuery(id);
   const [approveLeave] = useApproveLeaveMutation();
   const { data } = res;
 
-  console.log(res);
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -92,7 +92,10 @@ const LeaveDetails = () => {
         {res.isFetching && <Loader />}
 
         <div className="card-body">
-        {data?.data?.leave_count_on_this_day === 0 && (
+          {data?.data?.leave_count_on_this_day === 2 &&
+            authUserRole === "ApprovalAuthority" &&
+            
+         (
             <div class="alert alert-danger" role="alert">
               Already {data?.data?.leave_count_on_this_day} leave(s) has been approved on this date!
             </div>

@@ -4,7 +4,6 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import Moment from "react-moment";
 import "moment-timezone";
 import {
-  // useEmployeeDetailsByIdQuery,
   useLeaveBalanceListByEmpIdQuery,
 } from "../../../../services/employeeApi";
 import Loader from "../../../common/Loader";
@@ -14,7 +13,6 @@ import avatar from "../../../../assets/images/profile-picture.png";
 const EmployeeDetails = () => {
   const navigate = useNavigate();
   const { id } = useParams();
-  // const res = useEmployeeDetailsByIdQuery(id);
   const empDetailsRes = useLeaveBalanceListByEmpIdQuery(id);
 
   return (
@@ -306,7 +304,7 @@ const EmployeeDetails = () => {
                   <p>
                     Joining Date:
                     <span className="font-weight-bold text-primary ">
-                      <Moment format="YYYY/MM/DD">
+                      <Moment format="DD/MM/YYYY">
                         {empDetailsRes?.data?.data?.joining_date}
                       </Moment>
                     </span>

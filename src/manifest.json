@@ -1,6 +1,6 @@
 {
   "short_name": "LMS",
-  "name": "Learning Management System",
+  "name": "Leave Management System - BacBon Limited",
   "icons": [
     {
       "src": "favicon.ico",
@@ -31,7 +31,7 @@
 
   "scope": "/",
   "start_url": "/",
-    "display": "standalone",
+  "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
 }

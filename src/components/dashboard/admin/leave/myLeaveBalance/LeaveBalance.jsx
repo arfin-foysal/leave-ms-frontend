@@ -2,6 +2,7 @@ import React from "react";
 import { useMyLeaveBalanceListQuery } from "../../../../../services/leaveApplication";
 import Loader from "../../../../common/Loader";
 import PageTopHeader from "../../../../common/PageTopHeader";
+import { SlWallet } from 'react-icons/sl';
 
 const LeaveBalance = () => {
   const res = useMyLeaveBalanceListQuery();
@@ -15,7 +16,7 @@ const LeaveBalance = () => {
             <div className="card-header py-3 n">
               <div>
                 <h6 className="m-0 font-weight-bold text-primary">
-                  Leave Balance List
+               <SlWallet/> Leave Balance List
                 </h6>
               </div>
             </div>

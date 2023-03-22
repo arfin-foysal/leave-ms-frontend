@@ -10,6 +10,7 @@ import DesignationTable from "./DesignationTable";
 import DesignationModal from "./DesignationModal";
 import { useGetDesignationListQuery } from "../../../../services/designationApi";
 import PageTopHeader from "../../../common/PageTopHeader";
+import { FaSith } from 'react-icons/fa';
 
 const DesignationList = () => {
  
@@ -33,7 +34,7 @@ const DesignationList = () => {
       <div className="card shadow mb-4">
         <div className="card-header  d-flex justify-content-between">
           <div className="mt-1">
-            <h6 className="m-0 font-weight-bold text-primary">Designation List</h6>
+            <h6 className="m-0 font-weight-bold text-primary"> <FaSith/> Designation List</h6>
           </div>
           <div className="d-flex justify-content-end">
               <div className="mt-1">

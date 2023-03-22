@@ -5,6 +5,7 @@ import dayGridPlugin from "@fullcalendar/daygrid"; // a plugin!
 import interactionPlugin from "@fullcalendar/interaction";
 import { useMyCalenderLsitQuery } from "../../../../../services/calenderApi";
 import Loader from './../../../../common/Loader';
+import { BsCalendarDay } from "react-icons/bs";
 const MyCalender = () => {
   const res = useMyCalenderLsitQuery();
   const [calenderSummary, setCalenderSummary] = useState([]);
@@ -62,7 +63,7 @@ const MyCalender = () => {
         <div className="card-header py-3 n">
           <div>
             <h6 className="m-0 font-weight-bold text-primary">
-              Academic Calendar
+            <BsCalendarDay/>  Academic Calendar
             </h6>
           </div>
         </div>

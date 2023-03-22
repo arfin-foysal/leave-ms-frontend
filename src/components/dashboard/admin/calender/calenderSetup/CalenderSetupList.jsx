@@ -2,6 +2,7 @@ import React, { useState} from "react";
 import CalenderSetupModal from "./CalenderSetupModal";
 import CalenderSetupTable from "./CalenderSetupTable";
 import PageTopHeader from './../../../../common/PageTopHeader';
+import { BsCalendarCheck } from "react-icons/bs";
 
 const CalenderSetupList = () => {
 
@@ -19,7 +20,7 @@ const CalenderSetupList = () => {
         <div className="card-header py-3 ">
           <div>
             <h6 className="m-0 font-weight-bold text-primary">
-              All Leave Balance List
+          <BsCalendarCheck/> Official Calendar
             </h6>
           </div>
         </div>

@@ -108,10 +108,10 @@ export const employeeApi = createApi({
       providesTags: ["Employee"],
     }),
 
-    addOffboarding: builder.mutation({
+    addOffBoardingEmployee: builder.mutation({
       query: (employee) => {
         return {
-          url: `admin/add-approval-flow`,
+          url: `admin/make-employee-offboarded`,
           method: "POST",
           body: employee,
           headers,
@@ -136,5 +136,6 @@ export const {
   useLeaveBalanceListByEmpIdQuery,
   useGetApprovalAuthorityListQuery,
   useGetOffboardedEmployeeListQuery,
-  useAddOffboardingMutation,
+  useAddOffBoardingEmployeeMutation,
+
 } = employeeApi;

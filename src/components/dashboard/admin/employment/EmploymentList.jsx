@@ -2,6 +2,7 @@ import React, { useState, useCallback } from "react";
 
 import {
 
+  BsBox,
   BsFillPlusCircleFill,
 } from "react-icons/bs";
 import { Link,  } from "react-router-dom";
@@ -36,7 +37,7 @@ const EmploymentList = () => {
       <div className="card shadow mb-4">
         <div className="card-header d-flex justify-content-between ">
           <div className="mt1">
-            <h6 className="m-0 font-weight-bold text-primary">Employment Type</h6>
+            <h6 className="m-0 font-weight-bold text-primary"> <BsBox/> Employment Type</h6>
           </div>
           <div className="d-flex justify-content-end">
               <div className="mt-1">
