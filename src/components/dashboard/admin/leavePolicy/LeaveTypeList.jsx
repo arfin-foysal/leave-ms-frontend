@@ -58,7 +58,8 @@ const LeaveTypeList = () => {
                   <BsFillPlusCircleFill className="mb-1 mr-1" /> Add New Leave policy
                 </Link>
               </div>
-            </div>
+          </div>
+          
      
         </div>
 

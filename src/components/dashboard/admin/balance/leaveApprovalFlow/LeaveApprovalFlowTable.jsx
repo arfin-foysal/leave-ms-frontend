@@ -65,33 +65,7 @@ const LeaveApprovalFlowTable = () => {
   return (
     <>
       <div className="d-flex justify-content-end py-1">
-        <div className="col-md-3">
-          <Select
-            placeholder="Select Employee"
-            // isClearable={true}
-
-            // backspaceRemovesValue={true}
-            onChange={(e) => setEmployeeId(e.id)}
-            getOptionValue={(option) => `${option["id"]}`}
-            getOptionLabel={(option) =>
-              `${option["name"]} (${option["employee_code"]})`
-            }
-            options={employeeList?.data}
-          />
-        </div>
-
-        <div>
-          <Link
-            to="#"
-            className="btn btn-primary btn-sm mt-1"
-            onClick={() => {
-              handleShow();
-              handelClickValue("Add New Approval Flow");
-            }}
-          >
-            <BsFillPlusCircleFill className="mb-1 mr-1" /> Add Flow
-          </Link>
-        </div>
+        <div></div>
       </div>
 
       {isFetching && <Loader />}
@@ -114,6 +88,27 @@ const LeaveApprovalFlowTable = () => {
             backgroundColor: "#0D6EFD",
           },
         }}
+        renderTopToolbarCustomActions={() => (
+          <Select
+            className="w-25"
+            menuPortalTarget={document.body}
+            styles={{
+              
+              menuPortal: (base) => ({
+                ...base,
+                zIndex: 9999,
+
+              })
+            }}
+            placeholder="Select Employee"
+            onChange={(e) => setEmployeeId(e.id)}
+            getOptionValue={(option) => `${option["id"]}`}
+            getOptionLabel={(option) =>
+              `${option["name"]} (${option["employee_code"]})`
+            }
+            options={employeeList?.data}
+          />
+        )}
         // enablePagination="true"
         renderRowActions={(row, index) => (
           <>

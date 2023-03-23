@@ -10,7 +10,7 @@ import BalanceSetupModal from "./BalanceSetupModal";
 import { useGetEmployeeListQuery } from "../../../../../services/employeeApi";
 import { useGetBalanceSetupListQuery } from "../../../../../services/balanceSetupApi";
 import Loader from "../../../../common/Loader";
-import { BsFillPlusCircleFill } from 'react-icons/bs';
+
 
 const BalanceSetupTable = () => {
   const [employeeId, setEmployeeId] = useState(1);
@@ -78,46 +78,6 @@ const BalanceSetupTable = () => {
       />
       {/* <MaterialReactTable columns={columns} data={data} /> */}
 
-      <div className=" text-right ">
-        <div className=" d-flex justify-content-end  ">
-          <div className=" col-md-8 mt-1">
-            <IoSyncCircle
-              className="cursor "
-              color="black"
-              size={25}
-              onClick={() => refatchClick()}
-            />
-          </div>
-
-          <div className="col-md-3 mb-1">
-            <Select
-              placeholder="Select Employee"
-              classNamePrefix="balance-setup"
-              onChange={(e) => setEmployeeId(e.id, setIsTrue(false))}
-              getOptionValue={(option) => `${option["id"]}`}
-              getOptionLabel={(option) =>
-                `${option["name"]} (${option["employee_code"]})`
-              }
-              options={employeeList?.data}
-        
-            />
-          </div>
-          <div className="col-md-2 mb-1 px-0">
-          <Link
-            to="#"
-            className="btn btn-primary btn-sm mt-1"
-            onClick={() => {
-              handleShow();
-              handelClickValue("Add New Leave Balance");
-            }}
-          >
-            <BsFillPlusCircleFill className="mb-1 mr-1" /> Add Leave Balance
-          </Link>
-        </div>
-
-        </div>
-      </div>
-
       <MaterialReactTable
         columns={columns}
         data={isSuccess && data?.data?.balance_list}
@@ -129,7 +89,32 @@ const BalanceSetupTable = () => {
             backgroundColor: "#0D6EFD",
           },
         }}
-
+        renderTopToolbarCustomActions={() => (
+          <>
+            <div className="col-md-3 d-flex justify-content-start ">
+              <Select
+                className="w-100"
+                menuPortalTarget={document.body}
+                styles={{ menuPortal: (base) => ({ ...base, zIndex: 9999 }) }}
+                placeholder="Select Employee"
+                classNamePrefix="balance-setup"
+                onChange={(e) => setEmployeeId(e.id, setIsTrue(false))}
+                getOptionValue={(option) => `${option["id"]}`}
+                getOptionLabel={(option) =>
+                  `${option["name"]} (${option["employee_code"]})`
+                }
+                options={employeeList?.data}
+              />
+              <IoSyncCircle
+                className="cursor mt-2 ms-1"
+                color="white"
+                size={25}
+                onClick={() => refatchClick()}
+              />
+            </div>
+            <div className=""></div>
+          </>
+        )}
         // enablePagination="true"
         renderRowActions={(row, index) => (
           <>

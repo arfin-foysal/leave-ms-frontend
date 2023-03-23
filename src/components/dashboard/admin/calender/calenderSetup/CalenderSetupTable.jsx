@@ -33,8 +33,6 @@ const CalenderSetupTable = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  console.log("data", data);
-
   const handelClickValue = useCallback((value) => {
     setClickValue(value);
   }, []);
@@ -85,56 +83,7 @@ const CalenderSetupTable = () => {
         paramId={paramId}
       />
 
-      <div className=" text-right my-1 ">
-        <div className=" d-flex justify-content-end  ">
-          <div className="mt-1 col-md-8 ">
-            <IoSyncCircle
-              className="cursor "
-              color="black"
-              size={25}
-              onClick={() => refatchClick()}
-            />
-          </div>
-
-          <div className="col-md-2">
-            <Select
-              placeholder="Select Year"
-              // isClearable={true}
-              classNamePrefix="Employment Type"
-              // backspaceRemovesValue={true}
-              onChange={(e) => setYearId(e.year)}
-              getOptionValue={(option) => `${option["id"]}`}
-              getOptionLabel={(option) => `${option["year"]}`}
-              options={yearList?.data}
-            />
-          </div>
-          <div className="col-md-2">
-            <Select
-              placeholder="Select Month"
-              isClearable={true}
-              classNamePrefix="month"
-              // backspaceRemovesValue={true}
-              onChange={(e) => setMonthId(e.id)}
-              getOptionValue={(option) => `${option["id"]}`}
-              getOptionLabel={(option) => `${option["name"]}`}
-              options={month}
-            />
-          </div>
-          <div className="col-md-2 p-0 mt-1">
-            <Link
-              to="#"
-              className="btn btn-primary btn-sm"
-              onClick={() => {
-                handleShow();
-                handelClickValue("Add New Year");
-              }}
-            >
-              <BsFillPlusCircleFill className="mb-1 mr-1" />
-              Generate Calendar
-            </Link>
-          </div>
-        </div>
-      </div>
+      <div className=" text-right my-1 "></div>
 
       <MaterialReactTable
         columns={columns}
@@ -147,30 +96,63 @@ const CalenderSetupTable = () => {
             backgroundColor: "#0D6EFD",
           },
         }}
-        initialState={{ pagination: { pageSize: 31} }}
-        // enablePagination="true"
+        initialState={{ pagination: { pageSize: 31 } }}
+        renderTopToolbarCustomActions={() => (
+          <div className=" d-flex justify-content-start ">
+            <span style={{ width: "200px" }}>
+              <Select
+                menuPortalTarget={document.body}
+                styles={{ menuPortal: (base) => ({ ...base, zIndex: 99 }) }}
+                placeholder="Select Year"
+                classNamePrefix="Employment Type"
+                onChange={(e) => setYearId(e.year)}
+                getOptionValue={(option) => `${option["id"]}`}
+                getOptionLabel={(option) => `${option["year"]}`}
+                options={yearList?.data}
+              />
+            </span>
+
+            <span style={{ width: "200px" }}>
+              <Select
+                className="mx-2"
+                menuPortalTarget={document.body}
+                styles={{ menuPortal: (base) => ({ ...base, zIndex: 99 }) }}
+                placeholder="Select Month"
+                classNamePrefix="month"
+                onChange={(e) => setMonthId(e.id)}
+                getOptionValue={(option) => `${option["id"]}`}
+                getOptionLabel={(option) => `${option["name"]}`}
+                options={month}
+              />
+            </span>
+            <IoSyncCircle
+              className="cursor mt-2"
+              color="white "
+              size={25}
+              onClick={() => refatchClick()}
+            />
+          </div>
+        )}
         renderRowActions={(row, index) => (
           <>
-       
-              <div className="d-flex">
-                <Link
-                  to={`#`}
-                  title=""
-                  className="px-2 d-flex align-items-center btn btn-primary btn-sm"
-                  onClick={() => {
-                    handleShow();
-                    handelClickValue("Update Date Status");
-                    setParamId(row?.row?.original);
-                  }}
-                >
-                  <div>
-                    {" "}
-                    <FaEdit size={16} />
-                  </div>
-                  <div> Edit</div>
-                </Link>
-              </div>
-            
+            <div className="d-flex">
+              <Link
+                to={`#`}
+                title=""
+                className="px-2 d-flex align-items-center btn btn-primary btn-sm"
+                onClick={() => {
+                  handleShow();
+                  handelClickValue("Update Date Status");
+                  setParamId(row?.row?.original);
+                }}
+              >
+                <div>
+                  {" "}
+                  <FaEdit size={16} />
+                </div>
+                <div> Edit</div>
+              </Link>
+            </div>
           </>
         )}
       />

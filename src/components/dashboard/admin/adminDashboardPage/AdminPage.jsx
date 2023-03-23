@@ -44,6 +44,7 @@ const AdminPage = () => {
         <TopBox
           name="Total Applications"
           color="blue"
+         
           icon={<BsStack color="blue" size={25} />}
           item={data?.data?.count_total}
         />

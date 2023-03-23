@@ -2,7 +2,7 @@ import React from "react";
 
 const TopBox = ({ name, color, icon,item }) => {
   return (
-    <div className="col-xl-3 col-md-6 mb-4">
+    <div className="col-xl-3 col-md-6 mb-4 ">
       <div
         className="card  border-end border-top-0 border-bottom-0  shadow h-100 py-2"
         style={{
