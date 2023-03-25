@@ -28,26 +28,6 @@ export const wingApi = createApi({
       invalidatesTags: ["Wing"],
     }),
 
-    branchListByCompanyId: builder.query({
-      query: (id) => ({
-        url: `/admin/branch-list-by-company-id/${id}`,
-        method: 'GET',
-        headers
-      }),
-      providesTags: ['Wing']
-    }),
-    getDesignationtListByCompanyAndBranchId: builder.query({
-      query: ({ comId,braId }) => ({
-      
-        url: `admin/designation-list-by-id/${comId}/${braId}`,
-        method: 'GET',
-        headers
-      }),
-      providesTags: ['Wing']
-    }),
-
-
-
   }),
 });
 

@@ -34,8 +34,10 @@ const PasswordUpdateModal = ({ handleClose, show, clickValue, paramId }) => {
     <>
       <Modal show={show} onHide={handleClose} size="sm">
         <Modal.Header closeButton className="bg-warning">
-          <Modal.Title>{clickValue}</Modal.Title>
-        </Modal.Header>
+          <Modal.Title className="fs-6">
+        {clickValue}
+          </Modal.Title>
+        </Modal.Header >
         <Modal.Body>
           <div>
             <form onSubmit={formik.handleSubmit}>

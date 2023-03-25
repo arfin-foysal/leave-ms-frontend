@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 import { useLoginMutation } from "../../../services/authApi";
 import { toast, ToastContainer } from "react-toastify";
@@ -9,13 +9,13 @@ import logo from "../../../assets/logo/logo.png";
 import LoginLoader from "../../common/LoginLoader";
 import { BsArrowRight } from "react-icons/bs";
 import { loginSchema } from "../../../Validation/loginSchema";
-import { MdSignalWifiConnectedNoInternet3 } from "react-icons/md";
+
 
 const Login = () => {
-  const [login, { data, isLoading, isSuccess,isError }] = useLoginMutation();
+  const [login, { data, isLoading, isSuccess}] = useLoginMutation();
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+
 
   const formik = useFormik({
     validationSchema: loginSchema,

@@ -112,7 +112,7 @@ const EmployeeTable = () => {
       <PasswordUpdateModal
         handleClose={handleClose}
         show={show}
-        clickValue="Do you want to offboard this employee?"
+        clickValue="Do you want to reset password?"
         paramId={paramId}
       />
 
@@ -178,7 +178,7 @@ const EmployeeTable = () => {
                   className="px-2 btn btn-primary btn-sm d-flex align-items-center"
                 >
                   <div>
-                    <FaEdit className="mb-1 mr-1" size={18} />
+                    <FaEdit className="mb-1 mr-1" size={16} />
                   </div>
                   <div>Edit</div>
                 </Link>
@@ -193,7 +193,7 @@ const EmployeeTable = () => {
                   className="px-2 btn btn-danger btn-sm d-flex align-items-center"
                 >
                   <div>
-                    <FaPowerOff className="mb-1 mr-1" size={16} />
+                    <FaPowerOff className="mb-1 mr-1" size={14} />
                   </div>
                   <div>OffBoarding</div>
                 </Link>
