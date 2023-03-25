@@ -15,7 +15,7 @@ const Error = () => {
         </div>
 
         <div className="text-center">
-          <Link to="#" onClick={goBack}>&larr; Back to Dashboard</Link>
+          <Link to="#" className="btn btn-dark btn-sm" onClick={goBack}>&larr; Back to Dashboard</Link>
         </div>
       </div>
     </>
