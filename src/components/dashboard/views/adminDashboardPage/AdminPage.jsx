@@ -28,6 +28,10 @@ const AdminPage = () => {
     day = "Good Evening 🌃";
   }
 
+
+
+
+
   return (
     <>
       <div className="d-sm-flex align-items-center justify-content-between mb-4">
@@ -127,10 +131,10 @@ const AdminPage = () => {
                       <tr key={i}>
                         <td>{item.leave_title}</td>
                         <td>
-                          <Moment format="YYYY/MM/DD">{item.start_date}</Moment>
+                          <Moment format="DD/MM/YYYY">{item.start_date}</Moment>
                         </td>
                         <td>
-                          <Moment format="YYYY/MM/DD">{item.end_date}</Moment>
+                          <Moment format="DD/MM/YYYY">{item.end_date}</Moment>
                         </td>
                         <td>{item.total_applied_days} Dayes</td>
                         {item.is_half_day ? (

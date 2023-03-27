@@ -12,7 +12,7 @@ import PageTopHeader from './../../../../common/PageTopHeader';
 import ApplyForLeaveTable from "./ApplyForLeaveTable";
 import ApplyForLeaveModal from "./ApplyForLeaveModal";
 import { useGetLeaveApplicationListQuery } from "../../../../../services/leaveApplication";
-import { RiFileList3Line } from 'react-icons/ri';
+import { TfiWrite } from "react-icons/tfi";
 
 
 const ApplyForLeaveList = () => {
@@ -41,7 +41,7 @@ const ApplyForLeaveList = () => {
       <div className="card shadow mb-4">
         <div className="card-header  d-flex justify-content-between">
           <div className="mt-1">
-            <h6 className="m-0 font-weight-bold text-primary"> <RiFileList3Line/> Applied Leave List</h6>
+            <h6 className="m-0 font-weight-bold text-primary"> <TfiWrite/> Applied Leave List</h6>
 
 
           </div>
