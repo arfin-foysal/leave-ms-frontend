@@ -10,12 +10,10 @@ import LoginLoader from "../../common/LoginLoader";
 import { BsArrowRight } from "react-icons/bs";
 import { loginSchema } from "../../../Validation/loginSchema";
 
-
 const Login = () => {
-  const [login, { data, isLoading, isSuccess}] = useLoginMutation();
+  const [login, { data, isLoading, isSuccess }] = useLoginMutation();
 
   const dispatch = useDispatch();
-
 
   const formik = useFormik({
     validationSchema: loginSchema,
@@ -85,18 +83,17 @@ const Login = () => {
                             value={formik.values.email}
                             onBlur={formik.handleBlur}
                             className={
-                              formik.errors.email && formik.touched.email 
+                              formik.errors.email && formik.touched.email
                                 ? "form-control form-control-user is-invalid"
                                 : "form-control form-control-user"
                             }
                           />
                           {formik.errors.email && formik.touched.email ? (
-                      <div className="invalid-feedback">
-                        {formik.errors.email}
-                      </div>
-                    ) : null}
+                            <div className="invalid-feedback">
+                              {formik.errors.email}
+                            </div>
+                          ) : null}
                         </div>
-                 
 
                         <div className="form-group">
                           <input
@@ -108,20 +105,18 @@ const Login = () => {
                             value={formik.values.password}
                             onBlur={formik.handleBlur}
                             className={
-                               formik.errors.password && formik.touched.password
-
+                              formik.errors.password && formik.touched.password
                                 ? "form-control form-control-user is-invalid"
                                 : "form-control form-control-user"
-
                             }
                           />
-                            {formik.errors.password && formik.touched.password ? (
-                      <div className="invalid-feedback">
-                        {formik.errors.password}
-                      </div>
-                    ) : null}
+                          {formik.errors.password && formik.touched.password ? (
+                            <div className="invalid-feedback">
+                              {formik.errors.password}
+                            </div>
+                          ) : null}
                         </div>
-         
+
                         <button
                           type="submit"
                           className="btn btn-primary btn-user btn-block"
@@ -132,10 +127,7 @@ const Login = () => {
                       </form>
 
                       <div className="text-center mt-4 ">
-                        <Link
-                          className="small text-decoration-none"
-                          to="#"
-                        >
+                        <Link className="small text-decoration-none" to="#">
                           Forgot Password?
                         </Link>
                       </div>

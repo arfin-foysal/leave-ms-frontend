@@ -68,7 +68,7 @@ const BranchTable = () => {
         clickValue={clickValue}
         paramId={paramId}
       />
-      {/* <MaterialReactTable columns={columns} data={data} /> */}
+
       <MaterialReactTable
         columns={columns}
         data={isSuccess && data?.data}
